@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B93F631D1AFA98E400144B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F631C1AFA98E400144B89 /* AppDelegate.swift */; };
+		B93F631F1AFA98E400144B89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F631E1AFA98E400144B89 /* ViewController.swift */; };
+		B93F63221AFA98E400144B89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B93F63201AFA98E400144B89 /* Main.storyboard */; };
+		B93F63241AFA98E400144B89 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B93F63231AFA98E400144B89 /* Images.xcassets */; };
+		B93F63271AFA98E400144B89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93F63251AFA98E400144B89 /* LaunchScreen.xib */; };
+		B93F63331AFA98E400144B89 /* Quadradinho_D8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F63321AFA98E400144B89 /* Quadradinho_D8Tests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B93F632D1AFA98E400144B89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B93F630F1AFA98E400144B89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B93F63161AFA98E400144B89;
+			remoteInfo = "Quadradinho D8";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B93F63171AFA98E400144B89 /* Quadradinho D8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quadradinho D8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B93F631B1AFA98E400144B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B93F631C1AFA98E400144B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B93F631E1AFA98E400144B89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B93F63211AFA98E400144B89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B93F63231AFA98E400144B89 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B93F63261AFA98E400144B89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B93F632C1AFA98E400144B89 /* Quadradinho D8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quadradinho D8Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B93F63311AFA98E400144B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B93F63321AFA98E400144B89 /* Quadradinho_D8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quadradinho_D8Tests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B93F63141AFA98E400144B89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B93F63291AFA98E400144B89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B93F630E1AFA98E400144B89 = {
+			isa = PBXGroup;
+			children = (
+				B93F63191AFA98E400144B89 /* Quadradinho D8 */,
+				B93F632F1AFA98E400144B89 /* Quadradinho D8Tests */,
+				B93F63181AFA98E400144B89 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B93F63181AFA98E400144B89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B93F63171AFA98E400144B89 /* Quadradinho D8.app */,
+				B93F632C1AFA98E400144B89 /* Quadradinho D8Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B93F63191AFA98E400144B89 /* Quadradinho D8 */ = {
+			isa = PBXGroup;
+			children = (
+				B93F631C1AFA98E400144B89 /* AppDelegate.swift */,
+				B93F631E1AFA98E400144B89 /* ViewController.swift */,
+				B93F63201AFA98E400144B89 /* Main.storyboard */,
+				B93F63231AFA98E400144B89 /* Images.xcassets */,
+				B93F63251AFA98E400144B89 /* LaunchScreen.xib */,
+				B93F631A1AFA98E400144B89 /* Supporting Files */,
+			);
+			path = "Quadradinho D8";
+			sourceTree = "<group>";
+		};
+		B93F631A1AFA98E400144B89 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B93F631B1AFA98E400144B89 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B93F632F1AFA98E400144B89 /* Quadradinho D8Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B93F63321AFA98E400144B89 /* Quadradinho_D8Tests.swift */,
+				B93F63301AFA98E400144B89 /* Supporting Files */,
+			);
+			path = "Quadradinho D8Tests";
+			sourceTree = "<group>";
+		};
+		B93F63301AFA98E400144B89 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B93F63311AFA98E400144B89 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B93F63161AFA98E400144B89 /* Quadradinho D8 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B93F63361AFA98E400144B89 /* Build configuration list for PBXNativeTarget "Quadradinho D8" */;
+			buildPhases = (
+				B93F63131AFA98E400144B89 /* Sources */,
+				B93F63141AFA98E400144B89 /* Frameworks */,
+				B93F63151AFA98E400144B89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Quadradinho D8";
+			productName = "Quadradinho D8";
+			productReference = B93F63171AFA98E400144B89 /* Quadradinho D8.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B93F632B1AFA98E400144B89 /* Quadradinho D8Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B93F63391AFA98E400144B89 /* Build configuration list for PBXNativeTarget "Quadradinho D8Tests" */;
+			buildPhases = (
+				B93F63281AFA98E400144B89 /* Sources */,
+				B93F63291AFA98E400144B89 /* Frameworks */,
+				B93F632A1AFA98E400144B89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B93F632E1AFA98E400144B89 /* PBXTargetDependency */,
+			);
+			name = "Quadradinho D8Tests";
+			productName = "Quadradinho D8Tests";
+			productReference = B93F632C1AFA98E400144B89 /* Quadradinho D8Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B93F630F1AFA98E400144B89 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Bepid;
+				TargetAttributes = {
+					B93F63161AFA98E400144B89 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					B93F632B1AFA98E400144B89 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = B93F63161AFA98E400144B89;
+					};
+				};
+			};
+			buildConfigurationList = B93F63121AFA98E400144B89 /* Build configuration list for PBXProject "Quadradinho D8" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B93F630E1AFA98E400144B89;
+			productRefGroup = B93F63181AFA98E400144B89 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B93F63161AFA98E400144B89 /* Quadradinho D8 */,
+				B93F632B1AFA98E400144B89 /* Quadradinho D8Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B93F63151AFA98E400144B89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B93F63221AFA98E400144B89 /* Main.storyboard in Resources */,
+				B93F63271AFA98E400144B89 /* LaunchScreen.xib in Resources */,
+				B93F63241AFA98E400144B89 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B93F632A1AFA98E400144B89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B93F63131AFA98E400144B89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B93F631F1AFA98E400144B89 /* ViewController.swift in Sources */,
+				B93F631D1AFA98E400144B89 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B93F63281AFA98E400144B89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B93F63331AFA98E400144B89 /* Quadradinho_D8Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B93F632E1AFA98E400144B89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B93F63161AFA98E400144B89 /* Quadradinho D8 */;
+			targetProxy = B93F632D1AFA98E400144B89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B93F63201AFA98E400144B89 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B93F63211AFA98E400144B89 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B93F63251AFA98E400144B89 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B93F63261AFA98E400144B89 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B93F63341AFA98E400144B89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B93F63351AFA98E400144B89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B93F63371AFA98E400144B89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Quadradinho D8/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B93F63381AFA98E400144B89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Quadradinho D8/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B93F633A1AFA98E400144B89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Quadradinho D8Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quadradinho D8.app/Quadradinho D8";
+			};
+			name = Debug;
+		};
+		B93F633B1AFA98E400144B89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Quadradinho D8Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quadradinho D8.app/Quadradinho D8";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B93F63121AFA98E400144B89 /* Build configuration list for PBXProject "Quadradinho D8" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B93F63341AFA98E400144B89 /* Debug */,
+				B93F63351AFA98E400144B89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B93F63361AFA98E400144B89 /* Build configuration list for PBXNativeTarget "Quadradinho D8" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B93F63371AFA98E400144B89 /* Debug */,
+				B93F63381AFA98E400144B89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B93F63391AFA98E400144B89 /* Build configuration list for PBXNativeTarget "Quadradinho D8Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B93F633A1AFA98E400144B89 /* Debug */,
+				B93F633B1AFA98E400144B89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B93F630F1AFA98E400144B89 /* Project object */;
+}
