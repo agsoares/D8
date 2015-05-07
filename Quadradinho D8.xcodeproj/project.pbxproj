@@ -419,6 +419,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -457,6 +458,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -469,12 +471,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Quadradinho",
-					D8,
-					"$(PROJECT_DIR)/Quadradinho",
-					D8/Frameworks,
-					"$(PROJECT_DIR)/Quadradinho",
-					D8/Frameworks,
+					"$(PROJECT_DIR)/Quadradinho\\ D8/**",
 				);
 				INFOPLIST_FILE = "Quadradinho D8/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -492,12 +489,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Quadradinho",
-					D8,
-					"$(PROJECT_DIR)/Quadradinho",
-					D8/Frameworks,
-					"$(PROJECT_DIR)/Quadradinho",
-					D8/Frameworks,
+					"$(PROJECT_DIR)/Quadradinho\\ D8/**",
 				);
 				INFOPLIST_FILE = "Quadradinho D8/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
