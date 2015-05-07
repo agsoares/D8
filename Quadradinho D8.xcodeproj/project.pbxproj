@@ -35,6 +35,8 @@
 		B9E5FD8F1AFBD762006C2718 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5FD831AFBD762006C2718 /* ParseUI.framework */; };
 		B9E5FD911AFBD880006C2718 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5FD901AFBD880006C2718 /* Facebook.m */; };
 		B9E5FD931AFBE9D8006C2718 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5FD821AFBD762006C2718 /* ParseFacebookUtilsV4.framework */; };
+		B9E5FD971AFBEE2E006C2718 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E5FD961AFBEE2E006C2718 /* MapViewController.swift */; };
+		B9E5FD991AFBEE6F006C2718 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5FD981AFBEE6F006C2718 /* MapKit.framework */; };
 		B9EEC6C61AFBD20300EAD589 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EEC6C51AFBD20300EAD589 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		B9E5FD831AFBD762006C2718 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		B9E5FD901AFBD880006C2718 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
 		B9E5FD921AFBDAF3006C2718 /* Quadradinho D8-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quadradinho D8-Bridging-Header.h"; sourceTree = "<group>"; };
+		B9E5FD961AFBEE2E006C2718 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B9E5FD981AFBEE6F006C2718 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B9EEC6C51AFBD20300EAD589 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E5FD991AFBEE6F006C2718 /* MapKit.framework in Frameworks */,
 				B9E5FD771AFBD672006C2718 /* libsqlite3.dylib in Frameworks */,
 				B9E5FD8C1AFBD762006C2718 /* ParseCrashReporting.framework in Frameworks */,
 				B9E5FD751AFBD665006C2718 /* libz.dylib in Frameworks */,
@@ -186,6 +191,7 @@
 		B9EEC6C21AFBD11500EAD589 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9E5FD981AFBEE6F006C2718 /* MapKit.framework */,
 				B9E5FD761AFBD672006C2718 /* libsqlite3.dylib */,
 				B9E5FD741AFBD665006C2718 /* libz.dylib */,
 				B9E5FD721AFBD65C006C2718 /* SystemConfiguration.framework */,
@@ -216,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				B9EEC6C51AFBD20300EAD589 /* LoginViewController.swift */,
+				B9E5FD961AFBEE2E006C2718 /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -333,6 +340,7 @@
 				B9EEC6C61AFBD20300EAD589 /* LoginViewController.swift in Sources */,
 				B93F631F1AFA98E400144B89 /* ViewController.swift in Sources */,
 				B93F631D1AFA98E400144B89 /* AppDelegate.swift in Sources */,
+				B9E5FD971AFBEE2E006C2718 /* MapViewController.swift in Sources */,
 				B9E5FD911AFBD880006C2718 /* Facebook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
