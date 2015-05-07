@@ -129,16 +129,6 @@
 		B93F630E1AFA98E400144B89 = {
 			isa = PBXGroup;
 			children = (
-				B9E5FD761AFBD672006C2718 /* libsqlite3.dylib */,
-				B9E5FD741AFBD665006C2718 /* libz.dylib */,
-				B9E5FD721AFBD65C006C2718 /* SystemConfiguration.framework */,
-				B9E5FD701AFBD641006C2718 /* Security.framework */,
-				B9E5FD6E1AFBD639006C2718 /* QuartzCore.framework */,
-				B9E5FD6C1AFBD630006C2718 /* MobileCoreServices.framework */,
-				B9E5FD6A1AFBD626006C2718 /* CoreLocation.framework */,
-				B9E5FD681AFBD61E006C2718 /* CoreGraphics.framework */,
-				B9E5FD661AFBD616006C2718 /* CFNetwork.framework */,
-				B9E5FD641AFBD60C006C2718 /* AudioToolbox.framework */,
 				B93F63191AFA98E400144B89 /* Quadradinho D8 */,
 				B93F632F1AFA98E400144B89 /* Quadradinho D8Tests */,
 				B93F63181AFA98E400144B89 /* Products */,
@@ -198,6 +188,16 @@
 		B9EEC6C21AFBD11500EAD589 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9E5FD761AFBD672006C2718 /* libsqlite3.dylib */,
+				B9E5FD741AFBD665006C2718 /* libz.dylib */,
+				B9E5FD721AFBD65C006C2718 /* SystemConfiguration.framework */,
+				B9E5FD701AFBD641006C2718 /* Security.framework */,
+				B9E5FD6E1AFBD639006C2718 /* QuartzCore.framework */,
+				B9E5FD6C1AFBD630006C2718 /* MobileCoreServices.framework */,
+				B9E5FD6A1AFBD626006C2718 /* CoreLocation.framework */,
+				B9E5FD681AFBD61E006C2718 /* CoreGraphics.framework */,
+				B9E5FD661AFBD616006C2718 /* CFNetwork.framework */,
+				B9E5FD641AFBD60C006C2718 /* AudioToolbox.framework */,
 				B9E5FD781AFBD762006C2718 /* Bolts.framework */,
 				B9E5FD791AFBD762006C2718 /* FacebookSDK.strings */,
 				B9E5FD7A1AFBD762006C2718 /* FBAudienceNetwork.framework */,
