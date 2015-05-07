@@ -45,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="305" y="389"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="wP9-hu-hR1">
             <objects>
                 <viewController id="rOo-O3-vOF" sceneMemberID="viewController">
@@ -66,17 +66,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="MapRosa" id="lss-gv-Vne"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapRosa" id="lss-gv-Vne"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuq-43-TtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="1122"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="ky7-4I-ON9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ogX-Lk-AhY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="SettingsRosa" id="4Qv-qE-hoX"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="SettingsRosa" id="4Qv-qE-hoX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tq3-Kg-STj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -139,4 +139,7 @@
         <image name="MapRosa" width="23" height="34"/>
         <image name="SettingsRosa" width="36" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kgP-8V-V0r"/>
+    </inferredMetricsTieBreakers>
 </document>
