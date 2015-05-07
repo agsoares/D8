@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="PTY-WE-7Ag">
             <objects>
-                <viewController id="eeo-R4-NhR" sceneMemberID="viewController">
+                <viewController id="eeo-R4-NhR" customClass="LoginViewController" customModule="Quadradinho_D8" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oyH-EM-wPP"/>
                         <viewControllerLayoutGuide type="bottom" id="N23-RW-Mq3"/>
@@ -18,7 +18,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="HEl-yl-4uF" kind="show" id="iJn-In-yuc"/>
+                        <segue destination="HEl-yl-4uF" kind="show" identifier="loginSegue" id="iJn-In-yuc"/>
+                        <segue destination="HEl-yl-4uF" kind="presentation" identifier="autoLoginSegue" animates="NO" id="kgP-8V-V0r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tyc-KS-IMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
