@@ -37,8 +37,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ogX-Lk-AhY" kind="relationship" relationship="viewControllers" id="ZLS-vS-lsj"/>
                         <segue destination="rOo-O3-vOF" kind="relationship" relationship="viewControllers" id="fBB-pl-Nhj"/>
+                        <segue destination="ogX-Lk-AhY" kind="relationship" relationship="viewControllers" id="ZLS-vS-lsj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LhX-ms-K69" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -48,7 +48,7 @@
         <!--Map-->
         <scene sceneID="wP9-hu-hR1">
             <objects>
-                <viewController id="rOo-O3-vOF" sceneMemberID="viewController">
+                <viewController id="rOo-O3-vOF" customClass="MapViewController" customModule="Quadradinho_D8" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qkN-oO-CCI"/>
                         <viewControllerLayoutGuide type="bottom" id="bFa-77-pVk"/>
