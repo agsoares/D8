@@ -60,7 +60,6 @@
 		B93F632C1AFA98E400144B89 /* Quadradinho D8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quadradinho D8Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93F63311AFA98E400144B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B93F63321AFA98E400144B89 /* Quadradinho_D8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quadradinho_D8Tests.swift; sourceTree = "<group>"; };
-		B9E5FD601AFBD51B006C2718 /* Quadradinho D8-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Quadradinho D8-Bridging-Header.h"; path = "../Views/Quadradinho D8-Bridging-Header.h"; sourceTree = "<group>"; };
 		B9E5FD641AFBD60C006C2718 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B9E5FD661AFBD616006C2718 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B9E5FD681AFBD61E006C2718 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -84,6 +83,7 @@
 		B9E5FD821AFBD762006C2718 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		B9E5FD831AFBD762006C2718 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		B9E5FD901AFBD880006C2718 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
+		B9E5FD921AFBDAF3006C2718 /* Quadradinho D8-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quadradinho D8-Bridging-Header.h"; sourceTree = "<group>"; };
 		B9EEC6C51AFBD20300EAD589 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +163,7 @@
 				B93F631C1AFA98E400144B89 /* AppDelegate.swift */,
 				B93F631E1AFA98E400144B89 /* ViewController.swift */,
 				B93F63231AFA98E400144B89 /* Images.xcassets */,
+				B9E5FD921AFBDAF3006C2718 /* Quadradinho D8-Bridging-Header.h */,
 				B93F631A1AFA98E400144B89 /* Supporting Files */,
 			);
 			path = "Quadradinho D8";
@@ -171,7 +172,6 @@
 		B93F631A1AFA98E400144B89 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B9E5FD601AFBD51B006C2718 /* Quadradinho D8-Bridging-Header.h */,
 				B93F631B1AFA98E400144B89 /* Info.plist */,
 				B9E5FD901AFBD880006C2718 /* Facebook.m */,
 			);
@@ -480,7 +480,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Quadradinho D8/Views/Quadradinho D8-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -503,7 +503,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Quadradinho D8/Views/Quadradinho D8-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 			};
 			name = Release;
 		};
