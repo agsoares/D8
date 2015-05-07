@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eeo-R4-NhR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -58,7 +59,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dAZ-qm-AbS">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dAZ-qm-AbS">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <outlet property="delegate" destination="rOo-O3-vOF" id="SCr-C6-bRa"/>
@@ -66,6 +67,12 @@
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dAZ-qm-AbS" firstAttribute="height" secondItem="bRL-eG-mNQ" secondAttribute="height" id="1U3-bF-MoG"/>
+                            <constraint firstItem="dAZ-qm-AbS" firstAttribute="top" secondItem="qkN-oO-CCI" secondAttribute="bottom" constant="-20" id="EMf-jv-mM8"/>
+                            <constraint firstItem="dAZ-qm-AbS" firstAttribute="width" secondItem="bRL-eG-mNQ" secondAttribute="width" id="Hso-4B-aXZ"/>
+                            <constraint firstItem="dAZ-qm-AbS" firstAttribute="leading" secondItem="bRL-eG-mNQ" secondAttribute="leadingMargin" constant="-16" id="x1I-tF-2pg"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapRosa" id="lss-gv-Vne"/>
                     <connections>
