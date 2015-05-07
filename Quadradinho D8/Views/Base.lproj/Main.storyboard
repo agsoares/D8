@@ -35,6 +35,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="1xL-iy-EKz">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.53725490196078429" green="0.23529411764705882" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="rOo-O3-vOF" kind="relationship" relationship="viewControllers" id="fBB-pl-Nhj"/>
@@ -67,6 +68,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapRosa" id="lss-gv-Vne"/>
+                    <connections>
+                        <outlet property="map" destination="dAZ-qm-AbS" id="Azy-kX-htO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuq-43-TtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,8 +140,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MapRosa" width="23" height="34"/>
-        <image name="SettingsRosa" width="36" height="30"/>
+        <image name="MapRosa" width="22" height="32"/>
+        <image name="SettingsRosa" width="34" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kgP-8V-V0r"/>
