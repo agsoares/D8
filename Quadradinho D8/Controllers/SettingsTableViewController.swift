@@ -75,5 +75,5 @@ class SettingsTableViewController: UITableViewController, SKStoreProductViewCont
     func switchTapped() {
         println(beaconSwitch.on)
     }
-
+*/
 }
