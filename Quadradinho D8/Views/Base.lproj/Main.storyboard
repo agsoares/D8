@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-418" y="389"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tar Bar Controller-->
         <scene sceneID="iNc-ou-Joa">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="HEl-yl-4uF" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="HEl-yl-4uF" customClass="CustomTarBarController" customModule="Quadradinho_D8" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="1xL-iy-EKz">
