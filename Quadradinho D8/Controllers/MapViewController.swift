@@ -20,6 +20,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var UUID = NSUUID(UUIDString: "D56FEA44-29D9-4196-8B3C-6CB7E6136F1C")
     var beaconRegion:CLBeaconRegion!
     
+    var beaconsFound: [CLBeacon] = [CLBeacon]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,12 +31,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             self.locationManager.requestAlwaysAuthorization()
         }
         
+        if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+            locationManager.startMonitoringForRegion(beaconRegion)
+        }
 
         self.map.delegate = self
         
         initBeacon()
         transmitBeacon(true)
-        // Do any additional setup after loading the view.
+
     }
 
     
@@ -56,21 +61,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    // MARK: - Beacon General
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .AuthorizedAlways || status == .AuthorizedWhenInUse {
             self.locationManager.startUpdatingLocation()
+            locationManager.startMonitoringForRegion(beaconRegion)
         }
     }
-
-
+    
     func initBeacon () {
         beaconRegion = CLBeaconRegion(proximityUUID: UUID, major: 1, minor: 1, identifier: "beacon");
     }
+    
+    // MARK: - Beacon Transmitter
     
     func transmitBeacon(bool:Bool) {
         beaconPeripheralData = beaconRegion.peripheralDataWithMeasuredPower(-59)
@@ -88,14 +92,34 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func peripheralManagerDidStartAdvertising(peripheral: CBPeripheralManager!, error: NSError!) {
         println(error)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - Beacon Receiver
+    
+    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+        println("enter regionnnn")
+        locationManager.startRangingBeaconsInRegion(region as! CLBeaconRegion)
     }
-    */
+    
+    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
+        println("exit regionnnn")
+        locationManager.stopRangingBeaconsInRegion(region as! CLBeaconRegion)
+    }
+    
+    func locationManager(manager: CLLocationManager!, didStartMonitoringForRegion region: CLRegion!) {
+        println("start looking regionnnn")
+        locationManager.startRangingBeaconsInRegion(region as! CLBeaconRegion)
+    }
+    
+    func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
+        println("ranging beacons")
+        
+        if (beacons.count > 0) {
+            beaconsFound = beacons as! [CLBeacon]
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        locationManager.stopMonitoringForRegion(beaconRegion)
+    }
 
 }
