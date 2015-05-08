@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EDA25F31AFC846A001C1AD7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA25F21AFC846A001C1AD7 /* SettingsTableViewController.swift */; };
 		B93F631D1AFA98E400144B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F631C1AFA98E400144B89 /* AppDelegate.swift */; };
 		B93F631F1AFA98E400144B89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F631E1AFA98E400144B89 /* ViewController.swift */; };
 		B93F63221AFA98E400144B89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B93F63201AFA98E400144B89 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EDA25F21AFC846A001C1AD7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		B93F63171AFA98E400144B89 /* Quadradinho D8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quadradinho D8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93F631B1AFA98E400144B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B93F631C1AFA98E400144B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			children = (
 				B9EEC6C51AFBD20300EAD589 /* LoginViewController.swift */,
 				B9E5FD961AFBEE2E006C2718 /* MapViewController.swift */,
+				5EDA25F21AFC846A001C1AD7 /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			files = (
 				B9EEC6C61AFBD20300EAD589 /* LoginViewController.swift in Sources */,
 				B93F631F1AFA98E400144B89 /* ViewController.swift in Sources */,
+				5EDA25F31AFC846A001C1AD7 /* SettingsTableViewController.swift in Sources */,
 				B93F631D1AFA98E400144B89 /* AppDelegate.swift in Sources */,
 				B9E5FD971AFBEE2E006C2718 /* MapViewController.swift in Sources */,
 				B9E5FD911AFBD880006C2718 /* Facebook.m in Sources */,
