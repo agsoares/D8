@@ -14,6 +14,7 @@
 		B93F63241AFA98E400144B89 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B93F63231AFA98E400144B89 /* Images.xcassets */; };
 		B93F63271AFA98E400144B89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93F63251AFA98E400144B89 /* LaunchScreen.xib */; };
 		B93F63331AFA98E400144B89 /* Quadradinho_D8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F63321AFA98E400144B89 /* Quadradinho_D8Tests.swift */; };
+		B9BDFA4E1AFD206000F636B8 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BDFA4D1AFD206000F636B8 /* CoreBluetooth.framework */; };
 		B9E5FD651AFBD60C006C2718 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5FD641AFBD60C006C2718 /* AudioToolbox.framework */; };
 		B9E5FD671AFBD616006C2718 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5FD661AFBD616006C2718 /* CFNetwork.framework */; };
 		B9E5FD691AFBD61E006C2718 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5FD681AFBD61E006C2718 /* CoreGraphics.framework */; };
@@ -63,6 +64,7 @@
 		B93F632C1AFA98E400144B89 /* Quadradinho D8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quadradinho D8Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93F63311AFA98E400144B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B93F63321AFA98E400144B89 /* Quadradinho_D8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quadradinho_D8Tests.swift; sourceTree = "<group>"; };
+		B9BDFA4D1AFD206000F636B8 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		B9E5FD641AFBD60C006C2718 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B9E5FD661AFBD616006C2718 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B9E5FD681AFBD61E006C2718 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9BDFA4E1AFD206000F636B8 /* CoreBluetooth.framework in Frameworks */,
 				B9E5FD991AFBEE6F006C2718 /* MapKit.framework in Frameworks */,
 				B9E5FD771AFBD672006C2718 /* libsqlite3.dylib in Frameworks */,
 				B9E5FD8C1AFBD762006C2718 /* ParseCrashReporting.framework in Frameworks */,
@@ -193,6 +196,7 @@
 		B9EEC6C21AFBD11500EAD589 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9BDFA4D1AFD206000F636B8 /* CoreBluetooth.framework */,
 				B9E5FD981AFBEE6F006C2718 /* MapKit.framework */,
 				B9E5FD761AFBD672006C2718 /* libsqlite3.dylib */,
 				B9E5FD741AFBD665006C2718 /* libz.dylib */,
@@ -288,6 +292,11 @@
 				TargetAttributes = {
 					B93F63161AFA98E400144B89 = {
 						CreatedOnToolsVersion = 6.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					B93F632B1AFA98E400144B89 = {
 						CreatedOnToolsVersion = 6.3.1;

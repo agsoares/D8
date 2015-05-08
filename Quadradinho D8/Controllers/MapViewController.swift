@@ -8,12 +8,17 @@
 
 import UIKit
 import CoreLocation
+import CoreBluetooth
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, CBPeripheralManagerDelegate  {
     @IBOutlet weak var map: MKMapView!
     var locationManager = CLLocationManager()
-    
+    var beaconPeripheralData: NSMutableDictionary!
+    var peripheralManager: CBPeripheralManager!
+
+    var UUID = NSUUID(UUIDString: "D56FEA44-29D9-4196-8B3C-6CB7E6136F1C")
+    var beaconRegion:CLBeaconRegion!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
 
         self.map.delegate = self
+        
+        initBeacon()
+        transmitBeacon(true)
         // Do any additional setup after loading the view.
     }
 
@@ -60,6 +68,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
 
 
+    func initBeacon () {
+        beaconRegion = CLBeaconRegion(proximityUUID: UUID, major: 1, minor: 1, identifier: "beacon");
+    }
+    
+    func transmitBeacon(bool:Bool) {
+        beaconPeripheralData = beaconRegion.peripheralDataWithMeasuredPower(-59)
+        peripheralManager = CBPeripheralManager(delegate: self, queue: dispatch_get_main_queue())
+    }
+    
+    func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
+        if (peripheral.state == .PoweredOn) {
+            peripheralManager.startAdvertising(beaconPeripheralData as [NSObject : AnyObject]!)
+        } else if (peripheral.state == .PoweredOff) {
+            peripheralManager.stopAdvertising()
+        }
+    }
+    
+    func peripheralManagerDidStartAdvertising(peripheral: CBPeripheralManager!, error: NSError!) {
+        println(error)
+    }
     /*
     // MARK: - Navigation
 
