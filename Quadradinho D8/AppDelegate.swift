@@ -16,16 +16,12 @@ import FBSDKLoginKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let tintColor         = UIColor(red: 225/255, green: 150/255, blue: 255/255, alpha: 1) //
+    let selectedTintColor = UIColor.whiteColor() //
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         
-        
-        
-        
-        
-        
+        UITabBar.appearance().tintColor = selectedTintColor
         
         
         // [Optional] Power your app with Local Datastore. For more info, go to
