@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import StoreKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, SKStoreProductViewControllerDelegate {
 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +28,26 @@ class SettingsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func showStoreView(sender: AnyObject) {
+        let storeViewController = SKStoreProductViewController()
+        storeViewController.delegate = self
+        
+        let parameters = [SKStoreProductParameterITunesItemIdentifier :
+            NSNumber(integer: 676059878)]
+        
+        storeViewController.loadProductWithParameters(parameters,
+            completionBlock: {result, error in
+                if result {
+                    self.presentViewController(storeViewController,
+                        animated: true, completion: nil)
+                }
+                
+        })
+    }
+            
+                
 
     // MARK: - Table view data source
 

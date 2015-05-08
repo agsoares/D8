@@ -12,6 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.viewDidLoad()
+        
+        let appdelegate = UIApplication.sharedApplication().delegate
+            as! AppDelegate
+        
+        appdelegate.homeViewController = self
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
