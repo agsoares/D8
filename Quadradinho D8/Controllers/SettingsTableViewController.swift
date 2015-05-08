@@ -12,6 +12,7 @@ import StoreKit
 class SettingsTableViewController: UITableViewController, SKStoreProductViewControllerDelegate {
 
     
+    @IBOutlet weak var niceButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -46,7 +47,7 @@ class SettingsTableViewController: UITableViewController, SKStoreProductViewCont
                 
         })
     }
-            
+    
                 
 
     // MARK: - Table view data source
