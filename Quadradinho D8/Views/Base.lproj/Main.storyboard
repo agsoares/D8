@@ -209,6 +209,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="MpE-2u-3CV"/>
+                    <connections>
+                        <outlet property="beaconSwitch" destination="GpE-Wy-oDb" id="epq-qC-v77"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTm-Mk-KHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
