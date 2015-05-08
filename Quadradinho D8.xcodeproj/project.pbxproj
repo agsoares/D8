@@ -41,6 +41,7 @@
 		B9E5FD971AFBEE2E006C2718 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E5FD961AFBEE2E006C2718 /* MapViewController.swift */; };
 		B9E5FD991AFBEE6F006C2718 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5FD981AFBEE6F006C2718 /* MapKit.framework */; };
 		B9EEC6C61AFBD20300EAD589 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EEC6C51AFBD20300EAD589 /* LoginViewController.swift */; };
+		C1882AEB1AFD2ECB00271C51 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1882AEA1AFD2ECB00271C51 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		B9E5FD961AFBEE2E006C2718 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B9E5FD981AFBEE6F006C2718 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B9EEC6C51AFBD20300EAD589 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C1882AEA1AFD2ECB00271C51 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				B9E5FD841AFBD762006C2718 /* Bolts.framework in Frameworks */,
 				B9E5FD671AFBD616006C2718 /* CFNetwork.framework in Frameworks */,
 				B9E5FD651AFBD60C006C2718 /* AudioToolbox.framework in Frameworks */,
+				C1882AEB1AFD2ECB00271C51 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +142,7 @@
 		B93F630E1AFA98E400144B89 = {
 			isa = PBXGroup;
 			children = (
+				C1882AEA1AFD2ECB00271C51 /* StoreKit.framework */,
 				B93F63191AFA98E400144B89 /* Quadradinho D8 */,
 				B93F632F1AFA98E400144B89 /* Quadradinho D8Tests */,
 				B93F63181AFA98E400144B89 /* Products */,
@@ -296,8 +300,9 @@
 				TargetAttributes = {
 					B93F63161AFA98E400144B89 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = HVKWA5XE2J;
 						SystemCapabilities = {
-							com.apple.BackgroundModes = {
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 						};
@@ -494,6 +499,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Quadradinho\\ D8/**",
@@ -502,6 +509,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -512,6 +520,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Quadradinho\\ D8/**",
@@ -520,6 +530,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 			};
 			name = Release;
