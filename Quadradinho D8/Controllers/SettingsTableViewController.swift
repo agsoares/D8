@@ -12,7 +12,6 @@ import StoreKit
 class SettingsTableViewController: UITableViewController, SKStoreProductViewControllerDelegate {
 
     
-    @IBOutlet weak var niceButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -32,6 +31,7 @@ class SettingsTableViewController: UITableViewController, SKStoreProductViewCont
     
     
     @IBAction func showStoreView(sender: AnyObject) {
+        
         let storeViewController = SKStoreProductViewController()
         storeViewController.delegate = self
         
@@ -41,11 +41,63 @@ class SettingsTableViewController: UITableViewController, SKStoreProductViewCont
         storeViewController.loadProductWithParameters(parameters,
             completionBlock: {result, error in
                 if result {
+                   
                     self.presentViewController(storeViewController,
                         animated: true, completion: nil)
                 }
                 
         })
+    }
+    
+    
+    func productViewControllerDidFinish(viewController:
+        SKStoreProductViewController!) {
+            viewController.dismissViewControllerAnimated(true,
+                completion: nil)
+    }
+    
+    func productsRequest(request: SKProductsRequest!, didReceiveResponse response: SKProductsResponse!) {
+        
+        var products = response.products
+        
+        if (products.count != 0) {
+            // Display the a “buy product” screen containing details
+            // from product object
+        }
+        
+        products = response.invalidProductIdentifiers
+        
+        for product in products
+        {
+            // Handle invalid product IDs if required
+        }
+    }
+    
+    func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!) {
+        
+        for transaction in transactions as! [SKPaymentTransaction] {
+            
+            switch transaction.transactionState {
+                
+            case SKPaymentTransactionState.Purchased:
+                if (transaction.downloads != nil) {
+                    SKPaymentQueue.defaultQueue().startDownloads(
+                        transaction.downloads)
+                } else {
+                    // Unlock feature or content here before
+                    // finishing transaction
+                    SKPaymentQueue.defaultQueue().finishTransaction(
+                        transaction)
+                }
+                
+            case SKPaymentTransactionState.Failed:
+                SKPaymentQueue.defaultQueue().finishTransaction(
+                    transaction)
+                
+            default:
+                break
+            }
+        }
     }
     
                 
