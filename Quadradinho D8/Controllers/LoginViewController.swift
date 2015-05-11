@@ -35,6 +35,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     PFFacebookUtils.logInInBackgroundWithAccessToken (FBSDKAccessToken.currentAccessToken(), block: {
       (user, error) in
       if let user = user {
+        var objId : String! = PFUser.currentUser()?.objectId!
+        PFUser.currentUser()!.setObject(objId.hashValue, forKey: "hash")
+        PFUser.currentUser()!.saveEventually()
         self.performSegueWithIdentifier("loginSegue", sender: nil)
       } else {
         println("Uh oh. The user cancelled the Facebook login.")

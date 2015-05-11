@@ -31,7 +31,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             self.locationManager.requestAlwaysAuthorization()
         }
 
+        var teste = "string"
+        
         self.map.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("changeState:"), name: "transmitNotification", object: nil)
         
         initBeacon()
         transmitBeacon(false)
@@ -72,7 +76,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     // MARK: - Beacon Transmitter
     
+    func changeState(notification: NSNotification) {
+        var val: Bool = notification.object as! Bool
+        transmitBeacon(val)
+    }
+    
     func transmitBeacon(transmit:Bool) {
+        println(transmit)
         if (transmit) {
             locationManager.stopMonitoringForRegion(beaconRegion)
             beaconPeripheralData = beaconRegion.peripheralDataWithMeasuredPower(-59)
