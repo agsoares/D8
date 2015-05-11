@@ -30,15 +30,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             self.locationManager.requestAlwaysAuthorization()
         }
-        
-        if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
-            locationManager.startMonitoringForRegion(beaconRegion)
-        }
 
         self.map.delegate = self
         
         initBeacon()
-        transmitBeacon(true)
+        transmitBeacon(false)
 
     }
 
@@ -76,9 +72,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     // MARK: - Beacon Transmitter
     
-    func transmitBeacon(bool:Bool) {
-        beaconPeripheralData = beaconRegion.peripheralDataWithMeasuredPower(-59)
-        peripheralManager = CBPeripheralManager(delegate: self, queue: dispatch_get_main_queue())
+    func transmitBeacon(transmit:Bool) {
+        if (transmit) {
+            locationManager.stopMonitoringForRegion(beaconRegion)
+            beaconPeripheralData = beaconRegion.peripheralDataWithMeasuredPower(-59)
+            peripheralManager = CBPeripheralManager(delegate: self, queue: dispatch_get_main_queue())
+        } else {
+            if let peripheralManager = peripheralManager {
+                peripheralManager.stopAdvertising()
+            }
+            if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+                locationManager.startMonitoringForRegion(beaconRegion)
+            }
+
+        }
+
     }
     
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
