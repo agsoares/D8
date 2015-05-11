@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let tintColor         = UIColor(red: 225/255, green: 150/255, blue: 255/255, alpha: 1) //
     let selectedTintColor = UIColor.whiteColor() //
+    
+    var installation: PFInstallation?
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -40,7 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(["":""])
         }
-        
+        installation = PFInstallation.currentInstallation()
+        installation!.saveInBackgroundWithBlock { (success, error) -> Void in
+            var hash = (self.installation!.objectId!.hash as NSNumber).unsignedShortValue
+            self.installation!.setObject(NSNumber(unsignedShort: hash), forKey: "hash")
+            self.installation!.saveEventually()
+        }
+
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         

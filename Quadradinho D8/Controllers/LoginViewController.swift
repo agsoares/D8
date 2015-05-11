@@ -26,9 +26,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    if let user = PFUser.currentUser() {
-      self.performSegueWithIdentifier("autoLoginSegue", sender: nil)
-    }
+//    if let user = PFUser.currentUser() {
+//      self.performSegueWithIdentifier("autoLoginSegue", sender: nil)
+//    }
   }
   
   func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
@@ -36,10 +36,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
       (user, error) in
       if let user = user {
         var objId : String! = PFUser.currentUser()?.objectId!
-        PFUser.currentUser()!.setObject(objId.hashValue, forKey: "hash")
+        var hash = (objId.hashValue as NSNumber).unsignedShortValue
+        PFUser.currentUser()!.setObject(NSNumber(unsignedShort: hash), forKey: "hash")
         PFUser.currentUser()!.saveEventually()
         self.performSegueWithIdentifier("loginSegue", sender: nil)
       } else {
+        
         println("Uh oh. The user cancelled the Facebook login.")
       }
     })
