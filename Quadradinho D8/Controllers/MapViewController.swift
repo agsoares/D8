@@ -31,14 +31,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             self.locationManager.requestAlwaysAuthorization()
         }
         
-        if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
-            locationManager.startMonitoringForRegion(beaconRegion)
-        }
-
         self.map.delegate = self
         
         initBeacon()
+        
+        //if premium
         transmitBeacon(true)
+        //else?
+        monitoreRegion()
 
     }
 
@@ -94,6 +94,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     // MARK: - Beacon Receiver
+    
+    func monitoreRegion() {
+        if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+            locationManager.startMonitoringForRegion(beaconRegion)
+        }
+    }
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         println("enter regionnnn")
