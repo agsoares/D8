@@ -103,6 +103,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     // MARK: - Beacon Receiver
     
+    func monitoreRegion() {
+        if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+            locationManager.startMonitoringForRegion(beaconRegion)
+        }
+    }
+    
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         println("enter regionnnn")
         locationManager.startRangingBeaconsInRegion(region as! CLBeaconRegion)
