@@ -66,7 +66,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .AuthorizedAlways || status == .AuthorizedWhenInUse {
             self.locationManager.startUpdatingLocation()
-            locationManager.startMonitoringForRegion(beaconRegion)
+            //locationManager.startMonitoringForRegion(beaconRegion)
         }
     }
     
@@ -85,6 +85,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         println(transmit)
         if (transmit) {
             locationManager.stopMonitoringForRegion(beaconRegion)
+            beaconRegion = CLBeaconRegion(proximityUUID: UUID, major: 12, identifier: "beacon");
             beaconPeripheralData = beaconRegion.peripheralDataWithMeasuredPower(-59)
             peripheralManager = CBPeripheralManager(delegate: self, queue: dispatch_get_main_queue())
         } else {
@@ -92,6 +93,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 peripheralManager.stopAdvertising()
             }
             if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+                beaconRegion = CLBeaconRegion(proximityUUID: UUID, identifier: "beacon");
                 locationManager.startMonitoringForRegion(beaconRegion)
             }
 
@@ -138,8 +140,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         println("ranging beacons")
         
         if (beacons.count > 0) {
+            var alert = UIAlertView(title: beacons.first!.identifier, message: "errou", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
             beaconsFound = beacons as! [CLBeacon]
         }
+        locationManager.stopRangingBeaconsInRegion(region)
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
