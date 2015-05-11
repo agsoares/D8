@@ -14,8 +14,8 @@
 		B93F63221AFA98E400144B89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B93F63201AFA98E400144B89 /* Main.storyboard */; };
 		B93F63241AFA98E400144B89 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B93F63231AFA98E400144B89 /* Images.xcassets */; };
 		B93F63271AFA98E400144B89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93F63251AFA98E400144B89 /* LaunchScreen.xib */; };
-		B93F63331AFA98E400144B89 /* Quadradinho_D8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93F63321AFA98E400144B89 /* Quadradinho_D8Tests.swift */; };
 		B9BDFA4E1AFD206000F636B8 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BDFA4D1AFD206000F636B8 /* CoreBluetooth.framework */; };
+		B9E390001B012FBE002AB4C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E38FFF1B012FBE002AB4C3 /* StoreKit.framework */; };
 		B9E5FD651AFBD60C006C2718 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5FD641AFBD60C006C2718 /* AudioToolbox.framework */; };
 		B9E5FD671AFBD616006C2718 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5FD661AFBD616006C2718 /* CFNetwork.framework */; };
 		B9E5FD691AFBD61E006C2718 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5FD681AFBD61E006C2718 /* CoreGraphics.framework */; };
@@ -41,18 +41,7 @@
 		B9E5FD971AFBEE2E006C2718 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E5FD961AFBEE2E006C2718 /* MapViewController.swift */; };
 		B9E5FD991AFBEE6F006C2718 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5FD981AFBEE6F006C2718 /* MapKit.framework */; };
 		B9EEC6C61AFBD20300EAD589 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EEC6C51AFBD20300EAD589 /* LoginViewController.swift */; };
-		C1882AEB1AFD2ECB00271C51 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1882AEA1AFD2ECB00271C51 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B93F632D1AFA98E400144B89 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B93F630F1AFA98E400144B89 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B93F63161AFA98E400144B89;
-			remoteInfo = "Quadradinho D8";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5EDA25F21AFC846A001C1AD7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -64,10 +53,10 @@
 		B93F63211AFA98E400144B89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B93F63231AFA98E400144B89 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B93F63261AFA98E400144B89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B93F632C1AFA98E400144B89 /* Quadradinho D8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quadradinho D8Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93F63311AFA98E400144B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B93F63321AFA98E400144B89 /* Quadradinho_D8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quadradinho_D8Tests.swift; sourceTree = "<group>"; };
 		B9BDFA4D1AFD206000F636B8 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		B9E38FFF1B012FBE002AB4C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B9E5FD641AFBD60C006C2718 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B9E5FD661AFBD616006C2718 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B9E5FD681AFBD61E006C2718 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,7 +84,6 @@
 		B9E5FD961AFBEE2E006C2718 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B9E5FD981AFBEE6F006C2718 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B9EEC6C51AFBD20300EAD589 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C1882AEA1AFD2ECB00271C51 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +103,7 @@
 				B9E5FD711AFBD641006C2718 /* Security.framework in Frameworks */,
 				B9E5FD8B1AFBD762006C2718 /* Parse.framework in Frameworks */,
 				B9E5FD8F1AFBD762006C2718 /* ParseUI.framework in Frameworks */,
+				B9E390001B012FBE002AB4C3 /* StoreKit.framework in Frameworks */,
 				B9E5FD6F1AFBD639006C2718 /* QuartzCore.framework in Frameworks */,
 				B9E5FD891AFBD762006C2718 /* FBSDKMessengerShareKit.framework in Frameworks */,
 				B9E5FD8A1AFBD762006C2718 /* FBSDKShareKit.framework in Frameworks */,
@@ -125,14 +114,6 @@
 				B9E5FD841AFBD762006C2718 /* Bolts.framework in Frameworks */,
 				B9E5FD671AFBD616006C2718 /* CFNetwork.framework in Frameworks */,
 				B9E5FD651AFBD60C006C2718 /* AudioToolbox.framework in Frameworks */,
-				C1882AEB1AFD2ECB00271C51 /* StoreKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B93F63291AFA98E400144B89 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +123,7 @@
 		B93F630E1AFA98E400144B89 = {
 			isa = PBXGroup;
 			children = (
-				C1882AEA1AFD2ECB00271C51 /* StoreKit.framework */,
+				B9E38FFF1B012FBE002AB4C3 /* StoreKit.framework */,
 				B93F63191AFA98E400144B89 /* Quadradinho D8 */,
 				B93F632F1AFA98E400144B89 /* Quadradinho D8Tests */,
 				B93F63181AFA98E400144B89 /* Products */,
@@ -153,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				B93F63171AFA98E400144B89 /* Quadradinho D8.app */,
-				B93F632C1AFA98E400144B89 /* Quadradinho D8Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,24 +250,6 @@
 			productReference = B93F63171AFA98E400144B89 /* Quadradinho D8.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B93F632B1AFA98E400144B89 /* Quadradinho D8Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B93F63391AFA98E400144B89 /* Build configuration list for PBXNativeTarget "Quadradinho D8Tests" */;
-			buildPhases = (
-				B93F63281AFA98E400144B89 /* Sources */,
-				B93F63291AFA98E400144B89 /* Frameworks */,
-				B93F632A1AFA98E400144B89 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B93F632E1AFA98E400144B89 /* PBXTargetDependency */,
-			);
-			name = "Quadradinho D8Tests";
-			productName = "Quadradinho D8Tests";
-			productReference = B93F632C1AFA98E400144B89 /* Quadradinho D8Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -306,10 +268,6 @@
 							};
 						};
 					};
-					B93F632B1AFA98E400144B89 = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = B93F63161AFA98E400144B89;
-					};
 				};
 			};
 			buildConfigurationList = B93F63121AFA98E400144B89 /* Build configuration list for PBXProject "Quadradinho D8" */;
@@ -326,7 +284,6 @@
 			projectRoot = "";
 			targets = (
 				B93F63161AFA98E400144B89 /* Quadradinho D8 */,
-				B93F632B1AFA98E400144B89 /* Quadradinho D8Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -340,13 +297,6 @@
 				B93F63271AFA98E400144B89 /* LaunchScreen.xib in Resources */,
 				B93F63241AFA98E400144B89 /* Images.xcassets in Resources */,
 				B9E5FD851AFBD762006C2718 /* FacebookSDK.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B93F632A1AFA98E400144B89 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,23 +317,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B93F63281AFA98E400144B89 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B93F63331AFA98E400144B89 /* Quadradinho_D8Tests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B93F632E1AFA98E400144B89 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B93F63161AFA98E400144B89 /* Quadradinho D8 */;
-			targetProxy = B93F632D1AFA98E400144B89 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B93F63201AFA98E400144B89 /* Main.storyboard */ = {
@@ -533,40 +467,6 @@
 			};
 			name = Release;
 		};
-		B93F633A1AFA98E400144B89 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Quadradinho D8Tests/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quadradinho D8.app/Quadradinho D8";
-			};
-			name = Debug;
-		};
-		B93F633B1AFA98E400144B89 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Quadradinho D8Tests/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quadradinho D8.app/Quadradinho D8";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -584,15 +484,6 @@
 			buildConfigurations = (
 				B93F63371AFA98E400144B89 /* Debug */,
 				B93F63381AFA98E400144B89 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B93F63391AFA98E400144B89 /* Build configuration list for PBXNativeTarget "Quadradinho D8Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B93F633A1AFA98E400144B89 /* Debug */,
-				B93F633B1AFA98E400144B89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

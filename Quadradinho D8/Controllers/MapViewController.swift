@@ -30,15 +30,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             self.locationManager.requestAlwaysAuthorization()
         }
-        
-        if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
-            locationManager.startMonitoringForRegion(beaconRegion)
-        }
 
+        var teste = "string"
+        
         self.map.delegate = self
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("changeState:"), name: "transmitNotification", object: nil)
+        
         initBeacon()
-        transmitBeacon(true)
+        transmitBeacon(false)
 
     }
 
@@ -66,7 +66,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .AuthorizedAlways || status == .AuthorizedWhenInUse {
             self.locationManager.startUpdatingLocation()
-            locationManager.startMonitoringForRegion(beaconRegion)
+            //locationManager.startMonitoringForRegion(beaconRegion)
         }
     }
     
@@ -76,9 +76,29 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     // MARK: - Beacon Transmitter
     
-    func transmitBeacon(bool:Bool) {
-        beaconPeripheralData = beaconRegion.peripheralDataWithMeasuredPower(-59)
-        peripheralManager = CBPeripheralManager(delegate: self, queue: dispatch_get_main_queue())
+    func changeState(notification: NSNotification) {
+        var val: Bool = notification.object as! Bool
+        transmitBeacon(val)
+    }
+    
+    func transmitBeacon(transmit:Bool) {
+        println(transmit)
+        if (transmit) {
+            locationManager.stopMonitoringForRegion(beaconRegion)
+            beaconRegion = CLBeaconRegion(proximityUUID: UUID, major: 12, identifier: "beacon");
+            beaconPeripheralData = beaconRegion.peripheralDataWithMeasuredPower(-59)
+            peripheralManager = CBPeripheralManager(delegate: self, queue: dispatch_get_main_queue())
+        } else {
+            if let peripheralManager = peripheralManager {
+                peripheralManager.stopAdvertising()
+            }
+            if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+                beaconRegion = CLBeaconRegion(proximityUUID: UUID, identifier: "beacon");
+                locationManager.startMonitoringForRegion(beaconRegion)
+            }
+
+        }
+
     }
     
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
@@ -94,6 +114,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     // MARK: - Beacon Receiver
+    
+    func monitoreRegion() {
+        if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+            locationManager.startMonitoringForRegion(beaconRegion)
+        }
+    }
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         println("enter regionnnn")
@@ -114,8 +140,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         println("ranging beacons")
         
         if (beacons.count > 0) {
+            var alert = UIAlertView(title: beacons.first!.identifier, message: "errou", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
             beaconsFound = beacons as! [CLBeacon]
         }
+        locationManager.stopRangingBeaconsInRegion(region)
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
