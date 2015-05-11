@@ -165,7 +165,6 @@
 				B9EEC6C31AFBD15F00EAD589 /* Controllers */,
 				B9EEC6C21AFBD11500EAD589 /* Frameworks */,
 				B93F631C1AFA98E400144B89 /* AppDelegate.swift */,
-				B93F631E1AFA98E400144B89 /* ViewController.swift */,
 				9526C19A1AFD1D5E002391C7 /* File.swift */,
 				B93F63231AFA98E400144B89 /* Images.xcassets */,
 				B9E5FD921AFBDAF3006C2718 /* Quadradinho D8-Bridging-Header.h */,
@@ -300,7 +299,7 @@
 				TargetAttributes = {
 					B93F63161AFA98E400144B89 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = HVKWA5XE2J;
+						DevelopmentTeam = 958464RCCM;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -359,7 +358,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9EEC6C61AFBD20300EAD589 /* LoginViewController.swift in Sources */,
-				B93F631F1AFA98E400144B89 /* ViewController.swift in Sources */,
 				9526C1991AFD1C9A002391C7 /* CustomTarBarController.swift in Sources */,
 				5EDA25F31AFC846A001C1AD7 /* SettingsTableViewController.swift in Sources */,
 				B93F631D1AFA98E400144B89 /* AppDelegate.swift in Sources */,
@@ -509,7 +507,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a7a7ff9a-8aed-41c1-9d91-931456a863ba";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -530,7 +528,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a7a7ff9a-8aed-41c1-9d91-931456a863ba";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 			};
 			name = Release;
