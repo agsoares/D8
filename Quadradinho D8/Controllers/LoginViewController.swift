@@ -26,9 +26,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-//    if let user = PFUser.currentUser() {
-//      self.performSegueWithIdentifier("autoLoginSegue", sender: nil)
-//    }
   }
   
   func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
