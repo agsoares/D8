@@ -102,7 +102,6 @@ class SettingsTableViewController: UITableViewController, SKStoreProductViewCont
 
     @IBAction func premiumSelecter(sender: UISwitch) {
         NSNotificationCenter.defaultCenter().postNotificationName ("transmitNotification", object:sender.on )
-        println(sender.on)
     }
     // MARK: - Table view data source
 

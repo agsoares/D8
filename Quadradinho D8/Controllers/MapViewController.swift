@@ -16,9 +16,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var locationManager = CLLocationManager()
     var beaconPeripheralData: NSMutableDictionary!
     var peripheralManager: CBPeripheralManager!
-
+    
     var UUID = NSUUID(UUIDString: "D56FEA44-29D9-4196-8B3C-6CB7E6136F1C")
-    var beaconRegion:CLBeaconRegion!
+    var beaconRegion:CLBeaconRegion?
     
     var beaconsFound: [CLBeacon] = [CLBeacon]()
     
@@ -71,7 +71,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func initBeacon () {
-        beaconRegion = CLBeaconRegion(proximityUUID: UUID, major: 1, minor: 1, identifier: "beacon");
+        if let installation = (UIApplication.sharedApplication().delegate as! AppDelegate).installation {
+            var major: UInt16 = (installation.objectForKey("hash") as! NSNumber).unsignedShortValue
+            beaconRegion = CLBeaconRegion (proximityUUID: UUID, major: major, identifier: "beacon");
+            println(major.description)
+        }
     }
     
     // MARK: - Beacon Transmitter
@@ -82,11 +86,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func transmitBeacon(transmit:Bool) {
-        println(transmit)
         if (transmit) {
             locationManager.stopMonitoringForRegion(beaconRegion)
-            beaconRegion = CLBeaconRegion(proximityUUID: UUID, major: 12, identifier: "beacon");
-            beaconPeripheralData = beaconRegion.peripheralDataWithMeasuredPower(-59)
+            initBeacon()
+            beaconPeripheralData = beaconRegion!.peripheralDataWithMeasuredPower(-59)
             peripheralManager = CBPeripheralManager(delegate: self, queue: dispatch_get_main_queue())
         } else {
             if let peripheralManager = peripheralManager {
@@ -96,7 +99,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 beaconRegion = CLBeaconRegion(proximityUUID: UUID, identifier: "beacon");
                 locationManager.startMonitoringForRegion(beaconRegion)
             }
-
         }
 
     }
@@ -140,7 +142,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         println("ranging beacons")
         
         if (beacons.count > 0) {
-            var alert = UIAlertView(title: beacons.first!.identifier, message: "errou", delegate: nil, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: beacons.first!.identifier, message: beacons.first!.major.description, delegate: nil, cancelButtonTitle: "OK")
             alert.show()
             beaconsFound = beacons as! [CLBeacon]
         }
