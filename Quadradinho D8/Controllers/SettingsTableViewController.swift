@@ -35,9 +35,9 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     }
     
     
-//    func productsRequest(request: SKProductsRequest!, didReceiveResponse response: SKProductsResponse!) {
-//        
-//    }
+    func productsRequest(request: SKProductsRequest!, didReceiveResponse response: SKProductsResponse!) {
+        
+    }
     
 //    @IBAction func premiumSelecter(sender: UISwitch) {
 //                NSNotificationCenter.defaultCenter().postNotificationName ("transmitNotification", object:sender.on )
