@@ -53,6 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         })
         
+        var userNotificationTypes: UIUserNotificationType = ( .Alert | .Badge | .Sound )
+        var settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
     
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
