@@ -50,9 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.installation!.saveEventually()
         })
         
-
-
-        
+    
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
     }
