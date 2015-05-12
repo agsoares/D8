@@ -37,7 +37,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("changeState:"), name: "transmitNotification", object: nil)
         
-        initBeacon()
+        //initBeacon()
         transmitBeacon(false)
 
     }
@@ -72,9 +72,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func initBeacon () {
         if let installation = (UIApplication.sharedApplication().delegate as! AppDelegate).installation {
-            var major: UInt16 = (installation.objectForKey("hash") as! NSNumber).unsignedShortValue
-            beaconRegion = CLBeaconRegion (proximityUUID: UUID, major: major, identifier: "beacon");
-            println(major.description)
+            if let hash: NSNumber = (installation.objectForKey("hash")) as? NSNumber {
+                var major: UInt16 = hash.unsignedShortValue
+                beaconRegion = CLBeaconRegion (proximityUUID: UUID, major: major, identifier: "beacon");
+                println(major.description)
+            }
         }
     }
     
