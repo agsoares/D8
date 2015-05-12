@@ -45,9 +45,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         installation = PFInstallation.currentInstallation()
         installation!.saveInBackgroundWithBlock({ (success, error) -> Void in
-            var hash = (self.installation!.objectId!.hash as NSNumber).unsignedShortValue
-            self.installation!.setObject(NSNumber(unsignedShort: hash), forKey: "hash")
-            self.installation!.saveEventually()
+            if (success) {
+                var hash = (self.installation!.objectId!.hash as NSNumber).unsignedShortValue
+                self.installation!.setObject(NSNumber(unsignedShort: hash), forKey: "hash")
+                self.installation!.saveInBackground()
+            }
+
         })
         
     
@@ -74,8 +77,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKAppEvents.activateApp()
     }
 
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        installation!.setDeviceTokenFromData(deviceToken)
+        installation!.saveInBackground()
+    }
+    
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
     }
     
     func applicationWillTerminate(application: UIApplication) {
