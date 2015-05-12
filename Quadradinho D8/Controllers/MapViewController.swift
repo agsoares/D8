@@ -37,7 +37,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("changeState:"), name: "transmitNotification", object: nil)
         
-        //initBeacon()
         transmitBeacon(false)
 
     }
@@ -150,6 +149,23 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         locationManager.stopRangingBeaconsInRegion(region)
         
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        var location = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        
+        if let userLocation = locationManager.location {
+            location = CLLocationCoordinate2D(
+                latitude: userLocation.coordinate.latitude,
+                longitude: userLocation.coordinate.longitude
+            )
+        }
+        
+        var span = MKCoordinateSpanMake(0.05, 0.05)
+        var region = MKCoordinateRegion(center: location, span: span)
+        
+        self.map.setRegion(region, animated: true)
+        self.map.showsUserLocation = true;
     }
     
     override func viewWillDisappear(animated: Bool) {
