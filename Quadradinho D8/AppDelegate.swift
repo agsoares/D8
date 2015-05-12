@@ -44,11 +44,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(["":""])
         }
         installation = PFInstallation.currentInstallation()
-        installation!.saveInBackgroundWithBlock { (success, error) -> Void in
+        installation!.saveInBackgroundWithBlock({ (success, error) -> Void in
             var hash = (self.installation!.objectId!.hash as NSNumber).unsignedShortValue
             self.installation!.setObject(NSNumber(unsignedShort: hash), forKey: "hash")
             self.installation!.saveEventually()
-        }
+        })
+        
+
 
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
