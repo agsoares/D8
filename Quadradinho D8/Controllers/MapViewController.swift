@@ -37,7 +37,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("changeState:"), name: "transmitNotification", object: nil)
         
-        initBeacon()
         transmitBeacon(false)
 
     }
@@ -72,9 +71,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func initBeacon () {
         if let installation = (UIApplication.sharedApplication().delegate as! AppDelegate).installation {
-            var major: UInt16 = (installation.objectForKey("hash") as! NSNumber).unsignedShortValue
-            beaconRegion = CLBeaconRegion (proximityUUID: UUID, major: major, identifier: "beacon");
-            println(major.description)
+            if let hash: NSNumber = (installation.objectForKey("hash")) as? NSNumber {
+                var major: UInt16 = hash.unsignedShortValue
+                beaconRegion = CLBeaconRegion (proximityUUID: UUID, major: major, identifier: "beacon");
+                println(major.description)
+            }
         }
     }
     
@@ -142,12 +143,48 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         println("ranging beacons")
         
         if (beacons.count > 0) {
-            var alert = UIAlertView(title: beacons.first!.identifier, message: beacons.first!.major.description, delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
+            
+            for beacon in beacons {
+                let push = PFPush()
+                
+                // Create our Installation query
+                let pushQuery = PFInstallation.query()
+                pushQuery!.whereKey("hash", equalTo: beacon.major)
+                push.setQuery(pushQuery)
+                
+                //Insert data
+                let data = [
+                    "latitude" : locationManager.location.coordinate.latitude,
+                    "longitude" : locationManager.location.coordinate.longitude,
+                ]
+                push.setData(data)
+                
+                // Send push notification to query
+                
+                push.setMessage("TEM ALGUEM POR EPRTO GENTE")
+                push.sendPushInBackground()
+            }
             beaconsFound = beacons as! [CLBeacon]
         }
         locationManager.stopRangingBeaconsInRegion(region)
         
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        var location = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        
+        if let userLocation = locationManager.location {
+            location = CLLocationCoordinate2D(
+                latitude: userLocation.coordinate.latitude,
+                longitude: userLocation.coordinate.longitude
+            )
+        }
+        
+        var span = MKCoordinateSpanMake(0.05, 0.05)
+        var region = MKCoordinateRegion(center: location, span: span)
+        
+        self.map.setRegion(region, animated: true)
+        self.map.showsUserLocation = true;
     }
     
     override func viewWillDisappear(animated: Bool) {
