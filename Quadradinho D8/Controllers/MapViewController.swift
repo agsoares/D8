@@ -143,8 +143,27 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         println("ranging beacons")
         
         if (beacons.count > 0) {
-            var alert = UIAlertView(title: beacons.first!.identifier, message: beacons.first!.major.description, delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
+            
+            for beacon in beacons {
+                let push = PFPush()
+                
+                // Create our Installation query
+                let pushQuery = PFInstallation.query()
+                pushQuery!.whereKey("hash", equalTo: beacon.major)
+                push.setQuery(pushQuery)
+                
+                //Insert data
+                let data = [
+                    "latitude" : locationManager.location.coordinate.latitude,
+                    "longitude" : locationManager.location.coordinate.longitude,
+                ]
+                push.setData(data)
+                
+                // Send push notification to query
+                
+                push.setMessage("TEM ALGUEM POR EPRTO GENTE")
+                push.sendPushInBackground()
+            }
             beaconsFound = beacons as! [CLBeacon]
         }
         locationManager.stopRangingBeaconsInRegion(region)

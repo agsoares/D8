@@ -11,7 +11,7 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>329051E2671C52FCADE2CEBC0A76443C790B0C7F</key>
-		<string>https://github.com/agsoares/D8.git</string>
+		<string>https://github.com/agsoares/D8</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Quadradinho D8.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/agsoares/D8.git</string>
+	<string>https://github.com/agsoares/D8</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>329051E2671C52FCADE2CEBC0A76443C790B0C7F</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Quadradinho%20D8</string>
+			<string>D8</string>
 		</dict>
 	</array>
 </dict>
