@@ -198,12 +198,42 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wwS-7p-QB9" id="h8n-rh-JAa">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zB-fw-ADp">
+                                                    <rect key="frame" x="433" y="7" width="159" height="30"/>
+                                                    <state key="normal" title="Create Restricted Zone">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="createZoneButtonPressed" destination="myx-0e-E9h" eventType="touchUpInside" id="kA7-Zh-6sn"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0zB-fw-ADp" firstAttribute="trailing" secondItem="h8n-rh-JAa" secondAttribute="trailingMargin" id="Oac-Dx-KM7"/>
+                                                <constraint firstAttribute="centerY" secondItem="0zB-fw-ADp" secondAttribute="centerY" constant="-0.5" id="cX1-83-FE3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Swj-eU-8h2">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Swj-eU-8h2" id="vK2-ek-EM9">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHh-IE-2Ct">
+                                                    <rect key="frame" x="414" y="7" width="178" height="30"/>
+                                                    <state key="normal" title="Remove Restricted Zones">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="removeZonesButtonPressed" destination="myx-0e-E9h" eventType="touchUpInside" id="rBj-uY-vp8"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="eHh-IE-2Ct" secondAttribute="centerY" constant="-0.5" id="3io-Wn-t3K"/>
+                                                <constraint firstItem="eHh-IE-2Ct" firstAttribute="trailing" secondItem="vK2-ek-EM9" secondAttribute="trailingMargin" id="x2y-Hb-9f3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kSh-Sy-HSV">
