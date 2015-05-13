@@ -15,6 +15,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     
     var product_id: NSString?;
     
+    @IBOutlet weak var beaconButton: UISwitch!
     
     
     override func viewDidLoad() {
@@ -24,6 +25,8 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         super.viewDidLoad()
         println("entroooou")
         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
+        beaconButton.hidden = true
+        
         
         //addBotton();
         
@@ -80,6 +83,8 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         var payment = SKPayment(product: product)
         
         SKPaymentQueue.defaultQueue().addPayment(payment);
+        
+        beaconButton.hidden = false
         
         
         
