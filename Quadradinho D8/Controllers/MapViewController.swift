@@ -52,7 +52,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             )
         }
         
-        var span = MKCoordinateSpanMake(0.05, 0.05)
+        var span = MKCoordinateSpanMake(0.01, 0.01)
         var region = MKCoordinateRegion(center: location, span: span)
         
         self.map.setRegion(region, animated: true)
@@ -125,26 +125,38 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
-        println("enter regionnnn")
         locationManager.startRangingBeaconsInRegion(region as! CLBeaconRegion)
     }
     
     func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
-        println("exit regionnnn")
         locationManager.stopRangingBeaconsInRegion(region as! CLBeaconRegion)
     }
     
     func locationManager(manager: CLLocationManager!, didStartMonitoringForRegion region: CLRegion!) {
-        println("start looking regionnnn")
         locationManager.startRangingBeaconsInRegion(region as! CLBeaconRegion)
     }
     
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        var circleRenderer = MKCircleRenderer(overlay: overlay)
+        circleRenderer.strokeColor = UIColor.redColor()
+        circleRenderer.fillColor = UIColor.redColor().colorWithAlphaComponent(0.5)
+        return circleRenderer
+    }
+    
+    
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
-        println("ranging beacons")
-        
         if (beacons.count > 0) {
             
             for beacon in beacons {
+                var circle = MKCircle(centerCoordinate: manager.location.coordinate, radius: 100)
+                self.map.addOverlay(circle)
+                
+                var notification = UILocalNotification()
+                notification.alertTitle = "Be careful"
+                notification.alertBody = "Entering Restricted Region"
+                notification.fireDate = NSDate(timeIntervalSinceNow: 10)
+                UIApplication.sharedApplication().scheduleLocalNotification(notification)
+                /*
                 let push = PFPush()
                 
                 // Create our Installation query
@@ -163,6 +175,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 
                 push.setMessage("TEM ALGUEM POR EPRTO GENTE")
                 push.sendPushInBackground()
+                */
             }
             beaconsFound = beacons as! [CLBeacon]
         }
@@ -180,7 +193,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             )
         }
         
-        var span = MKCoordinateSpanMake(0.05, 0.05)
+        var span = MKCoordinateSpanMake(0.01, 0.01)
         var region = MKCoordinateRegion(center: location, span: span)
         
         self.map.setRegion(region, animated: true)
