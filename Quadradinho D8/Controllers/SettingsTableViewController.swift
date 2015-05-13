@@ -12,20 +12,18 @@ import StoreKit
 class SettingsTableViewController: UITableViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     
-    
     var product_id: NSString?;
     
     @IBOutlet weak var beaconButton: UISwitch!
     
     
     override func viewDidLoad() {
-        
         product_id = "QD8";
         
         super.viewDidLoad()
         println("entroooou")
         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
-        beaconButton.hidden = true
+        beaconButton.enabled = false
         
         
         //addBotton();
@@ -84,9 +82,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         
         SKPaymentQueue.defaultQueue().addPayment(payment);
         
-        beaconButton.hidden = false
-        
-        
+        beaconButton.enabled = true
         
     }
     
@@ -192,5 +188,70 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         
     }
     
+
+    @IBAction func premiumSelecter(sender: UISwitch) {
+        NSNotificationCenter.defaultCenter().postNotificationName ("transmitNotification", object:sender.on )
+        
+    }
+    
+    @IBAction func removeZonesButtonPressed() {
+        var query = PFQuery(className: "RestrictedZone")
+        
+        if let installation = (UIApplication.sharedApplication().delegate as! AppDelegate).installation {
+            if let hash: NSNumber = (installation.objectForKey("hash")) as? NSNumber {
+                query.whereKey("code", equalTo: hash)
+            }
+        }
+        query.findObjectsInBackgroundWithBlock {
+            (objects, error) in
+            for zone in objects! {
+                zone.deleteInBackground()
+                
+            }
+            
+        }
+
+    }
+    @IBAction func createZoneButtonPressed() {
+        let actionSheetController: UIAlertController = UIAlertController(title: "Danger Zone", message: "Choose your danger zone range!", preferredStyle: .Alert)
+        
+        //Create and an option action
+        let nextAction: UIAlertAction = UIAlertAction(title: "Done", style: .Default) { action -> Void in
+            var size = actionSheetController.textFields![0] as! UITextField
+            if let size = size.text.toInt() {
+                self.createRestrictedZone(size)
+            }
+            
+        }
+        actionSheetController.addAction(nextAction)
+        
+        //Add a text field
+        actionSheetController.addTextFieldWithConfigurationHandler { textField -> Void in
+            textField.placeholder = "Range to Cover"
+        }
+        
+        //Present the AlertController
+        self.presentViewController(actionSheetController, animated: true, completion: nil)
+    }
+    
+    func createRestrictedZone(size : Int) {
+        var zone = PFObject(className: "RestrictedZone")
+        if let installation = (UIApplication.sharedApplication().delegate as! AppDelegate).installation {
+            if let hash: NSNumber = (installation.objectForKey("hash")) as? NSNumber {
+                zone.setObject(hash, forKey: "code")
+                
+            }
+        }
+
+        zone.setObject(size, forKey: "size")
+        var mapVC = tabBarController?.viewControllers?.first as! MapViewController
+        var position = mapVC.locationManager.location.coordinate
+        var latitude = position.latitude
+        var longitude = position.longitude
+        zone.setObject(latitude, forKey: "latitude")
+        zone.setObject(longitude, forKey: "longitude")
+        zone.saveEventually()
+
+    }
 
 }
