@@ -56,8 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var userNotificationTypes: UIUserNotificationType = ( .Alert | .Badge | .Sound )
         var settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
         application.registerUserNotificationSettings(settings)
-        application.registerForRemoteNotifications()
-    
+        //application.registerForRemoteNotifications()
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
     }
@@ -84,6 +84,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         installation!.setDeviceTokenFromData(deviceToken)
         installation!.saveInBackground()
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        if (application.applicationState == .Active) {
+            var alert = UIAlertView(title: "Watch out", message: "Entering Restrict Region", delegate: nil, cancelButtonTitle: "OK")
+        }
+        
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
