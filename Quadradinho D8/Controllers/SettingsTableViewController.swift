@@ -23,7 +23,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         super.viewDidLoad()
         println("entroooou")
         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
-        beaconButton.enabled = false
+        //beaconButton.enabled = false
         
         
         //addBotton();

@@ -229,9 +229,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B93F63161AFA98E400144B89 /* Quadradinho D8 */ = {
+		B93F63161AFA98E400144B89 /* D8 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B93F63361AFA98E400144B89 /* Build configuration list for PBXNativeTarget "Quadradinho D8" */;
+			buildConfigurationList = B93F63361AFA98E400144B89 /* Build configuration list for PBXNativeTarget "D8" */;
 			buildPhases = (
 				B93F63131AFA98E400144B89 /* Sources */,
 				B93F63141AFA98E400144B89 /* Frameworks */,
@@ -241,7 +241,7 @@
 			);
 			dependencies = (
 			);
-			name = "Quadradinho D8";
+			name = D8;
 			productName = "Quadradinho D8";
 			productReference = B93F63171AFA98E400144B89 /* Quadradinho D8.app */;
 			productType = "com.apple.product-type.application";
@@ -279,7 +279,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B93F63161AFA98E400144B89 /* Quadradinho D8 */,
+				B93F63161AFA98E400144B89 /* D8 */,
 			);
 		};
 /* End PBXProject section */
@@ -475,7 +475,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B93F63361AFA98E400144B89 /* Build configuration list for PBXNativeTarget "Quadradinho D8" */ = {
+		B93F63361AFA98E400144B89 /* Build configuration list for PBXNativeTarget "D8" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B93F63371AFA98E400144B89 /* Debug */,
