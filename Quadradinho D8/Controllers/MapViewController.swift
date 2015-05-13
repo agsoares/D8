@@ -17,6 +17,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var beaconPeripheralData: NSMutableDictionary!
     var peripheralManager: CBPeripheralManager!
     
+    var beaconMajor = ""
+    
     var UUID = NSUUID(UUIDString: "D56FEA44-29D9-4196-8B3C-6CB7E6136F1C")
     var beaconRegion:CLBeaconRegion?
     
@@ -30,6 +32,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             self.locationManager.requestAlwaysAuthorization()
         }
+        
 
         var teste = "string"
         
@@ -74,7 +77,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             if let hash: NSNumber = (installation.objectForKey("hash")) as? NSNumber {
                 var major: UInt16 = hash.unsignedShortValue
                 beaconRegion = CLBeaconRegion (proximityUUID: UUID, major: major, identifier: "beacon");
-                println(major.description)
+                //println(major.description)
             }
         }
     }
@@ -148,34 +151,29 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if (beacons.count > 0) {
             
             for beacon in beacons {
-                var circle = MKCircle(centerCoordinate: manager.location.coordinate, radius: 100)
-                self.map.addOverlay(circle)
-                
+                var code = beacon.major
+                var query = PFQuery(className: "RestrictedZone")
+                query.whereKey("code", equalTo: code)
+                query.findObjectsInBackgroundWithBlock {
+                    (objects, error) in
+                    for zone in objects! {
+                        var latitude = zone.objectForKey("latitude") as! CLLocationDegrees
+                        var longitude = zone.objectForKey("longitude") as! CLLocationDegrees
+                        var location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                        var radius = zone.objectForKey("size") as! CLLocationDistance
+                        var circle = MKCircle(centerCoordinate: location, radius: radius)
+                        self.map.addOverlay(circle)
+                    
+                    }
+                    
+                }
+
                 var notification = UILocalNotification()
                 notification.alertTitle = "Be careful"
                 notification.alertBody = "Entering Restricted Region"
                 notification.fireDate = NSDate(timeIntervalSinceNow: 10)
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
-                /*
-                let push = PFPush()
-                
-                // Create our Installation query
-                let pushQuery = PFInstallation.query()
-                pushQuery!.whereKey("hash", equalTo: beacon.major)
-                push.setQuery(pushQuery)
-                
-                //Insert data
-                let data = [
-                    "latitude" : locationManager.location.coordinate.latitude,
-                    "longitude" : locationManager.location.coordinate.longitude,
-                ]
-                push.setData(data)
-                
-                // Send push notification to query
-                
-                push.setMessage("TEM ALGUEM POR EPRTO GENTE")
-                push.sendPushInBackground()
-                */
+
             }
             beaconsFound = beacons as! [CLBeacon]
         }
